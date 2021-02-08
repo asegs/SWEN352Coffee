@@ -64,7 +64,8 @@ public class Main {
 	    //Read in recipe price
 	    String priceString = inputOutput("\nPlease enter the recipe price: $");
 	    	    
-	    //Read in amt coffee
+	    //Making sure git is working
+		//Read in amt coffee
 	    String coffeeString = inputOutput("\nPlease enter the units of coffee in the recipe: ");
 	    	    
 	    //Read in amt milk
