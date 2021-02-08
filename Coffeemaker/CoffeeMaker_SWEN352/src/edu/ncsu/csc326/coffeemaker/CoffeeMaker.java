@@ -3,7 +3,7 @@ package edu.ncsu.csc326.coffeemaker;
 import edu.ncsu.csc326.coffeemaker.exceptions.InventoryException;
 
 /**
- * @author Sarah Heckman
+ * @author Sarah Heckman [NOT]
  */
 public class CoffeeMaker {
 	/** Array of recipes in coffee maker */
