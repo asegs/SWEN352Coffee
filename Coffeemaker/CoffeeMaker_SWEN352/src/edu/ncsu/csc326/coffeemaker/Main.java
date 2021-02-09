@@ -22,7 +22,6 @@ public class Main {
      */
     public static void mainMenu() {
         System.out.println("Welcome to RecipeMaker.");
-        System.out.println("Hiya Buddy!");
         System.out.println("1. Add a recipe");
         System.out.println("2. Delete a recipe");
         System.out.println("3. Edit a recipe");
