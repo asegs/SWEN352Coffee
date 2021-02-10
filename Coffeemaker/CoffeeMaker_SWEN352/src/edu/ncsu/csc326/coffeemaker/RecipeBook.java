@@ -23,6 +23,11 @@ public class RecipeBook {
 		return recipeArray;
 	}
 	
+	/**
+	 * Adds new recipes to the inventory.
+	 * @param r
+	 * @return
+	 */
 	public synchronized boolean addRecipe(Recipe r) {
 		//Assume recipe doesn't exist in the array until 
 		//find out otherwise
@@ -53,11 +58,12 @@ public class RecipeBook {
 	 * and null if the recipe does not exist.
 	 * @param recipeToDelete
 	 * @return String
+	 * SOMETHING IS NOT CORRECT
 	 */
 	public synchronized String deleteRecipe(int recipeToDelete) {
 		if (recipeArray[recipeToDelete] != null) {
 			String recipeName = recipeArray[recipeToDelete].getName();
-			recipeArray[recipeToDelete] = new Recipe();
+			recipeArray[recipeToDelete] = null;
 			return recipeName;
 		} else {
 			return null;
@@ -70,6 +76,7 @@ public class RecipeBook {
 	 * @param recipeToEdit
 	 * @param newRecipe
 	 * @return String
+	 * SOMETHING IS NOT CORRECT
 	 */
 	public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) {
 		if (recipeArray[recipeToEdit] != null) {
