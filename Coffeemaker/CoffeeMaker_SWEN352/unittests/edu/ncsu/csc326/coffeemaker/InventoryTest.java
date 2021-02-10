@@ -17,6 +17,47 @@ public class InventoryTest extends TestCase {
 	}
 	
 	@Test
+	public void testSetAndGetCoffee() {
+		Inventory CuT = new Inventory();
+		CuT.setCoffee(100);
+		assertEquals(100,CuT.getCoffee());
+	}
+	
+	@Test
+	public void testAddCoffeeNormal() throws InventoryException {
+		Inventory CuT = new Inventory();
+		CuT.setCoffee(0);
+		CuT.addCoffee("1");
+		assertEquals(1,CuT.getCoffee());
+	}
+	
+	@Test
+	public void testAddCoffeeNegative() throws InventoryException {
+		Inventory CuT = new Inventory();
+		CuT.setCoffee(0);
+		try {
+			CuT.addCoffee("-15");
+		}
+		catch(InventoryException ie) {
+			;
+		}
+		assertEquals(0,CuT.getCoffee());
+	}
+	
+	@Test
+	public void testAddCoffeeNonNumeric() {
+		Inventory CuT = new Inventory();
+		CuT.setCoffee(0);
+		try {
+			CuT.addCoffee("beebop");
+		}
+		catch(InventoryException ie) {
+			;
+		}
+		assertEquals(0,CuT.getCoffee());
+	}
+	
+	@Test
 	public void testSetAndGetChocolate() {
 		Inventory CuT = new Inventory();
 		CuT.setChocolate(100);
@@ -99,6 +140,7 @@ public class InventoryTest extends TestCase {
 	}
 	
 	
+	
 	@Test
 	public void testSetAndGetSugar() {
 		Inventory CuT = new Inventory();
@@ -168,6 +210,111 @@ public class InventoryTest extends TestCase {
 		recipe.setAmtSugar("15");
 		assertTrue( CuT.enoughIngredients(recipe));
 	}
+	
+	@Test
+	public void testChocolateOverRecipe() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("100");
+		recipe.setAmtCoffee("15");
+		recipe.setAmtMilk("15");
+		recipe.setAmtSugar("15");
+		assertFalse( CuT.enoughIngredients(recipe));
+	}
+	
+	@Test
+	public void testCoffeeOverRecipe() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("15");
+		recipe.setAmtCoffee("100");
+		recipe.setAmtMilk("15");
+		recipe.setAmtSugar("15");
+		assertFalse( CuT.enoughIngredients(recipe));
+	}
+	
+	@Test
+	public void testMilkOverRecipe() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("15");
+		recipe.setAmtCoffee("15");
+		recipe.setAmtMilk("100");
+		recipe.setAmtSugar("15");
+		assertFalse( CuT.enoughIngredients(recipe));
+	}
+	
+	@Test
+	public void testSugarOverRecipe() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("15");
+		recipe.setAmtCoffee("15");
+		recipe.setAmtMilk("15");
+		recipe.setAmtSugar("100");
+		assertFalse( CuT.enoughIngredients(recipe));
+	}
+	
+	@Test
+	public void testSubtractNormal() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("15");
+		recipe.setAmtCoffee("15");
+		recipe.setAmtMilk("15");
+		recipe.setAmtSugar("15");
+		assertTrue( CuT.useIngredients(recipe));
+	}
+	
+	@Test
+	public void testSubtractNotEnoughChocolate() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("25");
+		recipe.setAmtCoffee("15");
+		recipe.setAmtMilk("15");
+		recipe.setAmtSugar("15");
+		assertFalse( CuT.useIngredients(recipe));
+	}
+	
+	@Test
+	public void testSubtractNotEnoughCoffee() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("15");
+		recipe.setAmtCoffee("25");
+		recipe.setAmtMilk("15");
+		recipe.setAmtSugar("15");
+		assertFalse( CuT.useIngredients(recipe));
+	}
+	
+	@Test
+	public void testSubtractNotEnoughMilk() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("15");
+		recipe.setAmtCoffee("15");
+		recipe.setAmtMilk("25");
+		recipe.setAmtSugar("15");
+		assertFalse( CuT.useIngredients(recipe));
+	}
+	
+	@Test
+	public void testSubtractNotEnoughSugar() throws RecipeException {
+		Recipe recipe = new Recipe();
+		Inventory CuT = new Inventory();
+		recipe.setAmtChocolate("15");
+		recipe.setAmtCoffee("15");
+		recipe.setAmtMilk("15");
+		recipe.setAmtSugar("25");
+		assertFalse( CuT.useIngredients(recipe));
+	}
+	
+	@Test public void testToString() {
+		Inventory CuT = new Inventory();
+		CuT.toString();
+	}
+
 	
 
 }
