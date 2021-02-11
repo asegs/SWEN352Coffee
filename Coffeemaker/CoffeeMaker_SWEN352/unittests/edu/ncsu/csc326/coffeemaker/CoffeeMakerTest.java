@@ -67,7 +67,7 @@ public class CoffeeMakerTest extends TestCase{
 	}
 	
 	@Test
-	public void deleteFullyResets() {
+	public void deleteFullyResetsTest() {
 		CoffeeMaker CuT = new CoffeeMaker();
 		Recipe r1 = new Recipe();
 		r1.setName("R1");
@@ -79,7 +79,7 @@ public class CoffeeMakerTest extends TestCase{
 	}
 	
 	@Test
-	public void rightRecipeReplaced() {
+	public void rightRecipeReplacedTest() {
 		CoffeeMaker CuT = new CoffeeMaker();
 		Recipe r1 = new Recipe();
 		r1.setName("R1");
@@ -90,7 +90,7 @@ public class CoffeeMakerTest extends TestCase{
 	}
 	
 	@Test
-	public void newRecipeCorrect() {
+	public void newRecipeCorrectTest() {
 		CoffeeMaker CuT = new CoffeeMaker();
 		Recipe r1 = new Recipe();
 		r1.setName("R1");
@@ -110,13 +110,13 @@ public class CoffeeMakerTest extends TestCase{
 	}
 	
 	@Test
-	public void addInventoryNormal() throws InventoryException {
+	public void addInventoryNormalTest() throws InventoryException {
 		CoffeeMaker CuT = new CoffeeMaker();
 		CuT.addInventory("15", "1", "1000", "1");
 	}
 	
 	@Test
-	public void addInventoryNegative() {
+	public void addInventoryNegativeTest() {
 		CoffeeMaker CuT = new CoffeeMaker();
 		try {
 			CuT.addInventory("15", "-1", "1000", "1");
@@ -137,4 +137,66 @@ public class CoffeeMakerTest extends TestCase{
 		}
 	}
 	
+	@Test
+	public void checkInventoryTest() {
+		CoffeeMaker CuT = new CoffeeMaker();
+		CuT.checkInventory();
+	}
+	
+	@Test
+	public void buyNothingTest() {
+		CoffeeMaker CuT = new CoffeeMaker();
+		assertEquals(15,CuT.makeCoffee(0, 15));	
+	}
+	
+	@Test
+	public void buyNormalCoffeeTest() throws RecipeException {
+		CoffeeMaker CuT = new CoffeeMaker();
+		Recipe r1 = new Recipe();
+		r1.setAmtChocolate("10");
+		r1.setAmtCoffee("10");
+		r1.setAmtMilk("10");
+		r1.setAmtSugar("10");
+		r1.setName("R1");
+		CuT.addRecipe(r1);
+		r1.setPrice("10");
+		assertEquals(5,CuT.makeCoffee(0, 15));
+		
+	}
+	
+	@Test
+	public void buyInvalidCoffeeTest() {
+		CoffeeMaker CuT = new CoffeeMaker();
+		assertEquals(15,CuT.makeCoffee(-1, 15));
+	}
+	
+	@Test
+	public void dontHaveEnoughIngredientsTest() throws RecipeException {
+		CoffeeMaker CuT = new CoffeeMaker();
+		Recipe r1 = new Recipe();
+		r1.setAmtChocolate("16");
+		r1.setAmtCoffee("16");
+		r1.setAmtMilk("16");
+		r1.setAmtSugar("16");
+		r1.setName("R1");
+		CuT.addRecipe(r1);
+		r1.setPrice("10");
+		assertEquals(15,CuT.makeCoffee(0, 15));
+		
+	}
+	
+	@Test
+	public void buyExpensiveCoffeeTest() throws RecipeException {
+		CoffeeMaker CuT = new CoffeeMaker();
+		Recipe r1 = new Recipe();
+		r1.setAmtChocolate("10");
+		r1.setAmtCoffee("10");
+		r1.setAmtMilk("10");
+		r1.setAmtSugar("10");
+		r1.setName("R1");
+		CuT.addRecipe(r1);
+		r1.setPrice("16");
+		assertEquals(15,CuT.makeCoffee(0, 15));
+		
+	}
 }

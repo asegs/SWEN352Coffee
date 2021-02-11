@@ -86,7 +86,7 @@ public class CoffeeMaker {
     public synchronized int makeCoffee(int recipeToPurchase, int amtPaid) {
         int change = 0;
         
-        if (getRecipes()[recipeToPurchase] == null) {
+        if (recipeToPurchase == -1 || getRecipes()[recipeToPurchase] == null) {
         	change = amtPaid;
         } else if (getRecipes()[recipeToPurchase].getPrice() <= amtPaid) {
         	if (inventory.useIngredients(getRecipes()[recipeToPurchase])) {
