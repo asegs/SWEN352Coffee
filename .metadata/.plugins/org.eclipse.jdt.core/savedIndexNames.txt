@@ -1,0 +1,16 @@
+INDEX VERSION 1.131+C:\Users\12162\code\swen-352\SWEN352Coffee\.metadata\.plugins\org.eclipse.jdt.core
+2196199803.index
+167255340.index
+4004449697.index
+2762041266.index
+806036325.index
+2072814858.index
+331587953.index
+2751873868.index
+1184502301.index
+3349283479.index
+2607539180.index
+3033047460.index
+1650452442.index
+158542891.index
+2467562431.index

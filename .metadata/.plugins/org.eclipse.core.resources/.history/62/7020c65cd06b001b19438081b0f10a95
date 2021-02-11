@@ -1,0 +1,132 @@
+package edu.ncsu.csc326.coffeemaker;
+
+import org.junit.jupiter.api.Test;
+
+import edu.ncsu.csc326.coffeemaker.exceptions.RecipeException;
+import junit.framework.TestCase;
+
+public class RecipeTest extends TestCase {
+	
+
+	protected void setUp() throws Exception {
+		super.setUp();
+	}
+
+	protected void tearDown() throws Exception {
+		super.tearDown();
+	}
+	
+	@Test
+	public void testGetAmtChocolate() {
+		Recipe CuT = new Recipe();
+		int amtChocolate = CuT.getAmtChocolate();
+		assertEquals(0, amtChocolate);
+	}
+	
+	@Test
+	public void testSetAmtChocolatePositiveInteger() throws RecipeException{
+		Recipe CuT = new Recipe();
+		CuT.setAmtChocolate("1");
+		assertEquals(1, CuT.getAmtChocolate());
+	}
+	
+	@Test
+	public void testSetAmtChocolateNegativeInteger() throws RecipeException{
+		Recipe CuT = new Recipe();
+		try {
+		CuT.setAmtChocolate("-1");
+		}
+		catch(RecipeException ie) {
+			;
+		}
+		assertEquals(0, CuT.getAmtChocolate());
+	}
+	
+	@Test
+	public void testSetAmtChocolateRandomString() throws RecipeException{
+		Recipe CuT = new Recipe();
+		try {
+			CuT.setAmtChocolate("fdasjkl;");
+		}
+		catch(RecipeException ie) {
+			;
+		}
+		assertEquals(0, CuT.getAmtChocolate());
+	}
+	
+	@Test
+	public void testgetAmtCoffee() {
+		Recipe CuT = new Recipe();
+		int amtCoffee = CuT.getAmtCoffee();
+		assertEquals(0, amtCoffee);
+	}
+	
+	@Test
+	public void testSetAmtCoffeePositiveInteger() throws RecipeException{
+		Recipe CuT = new Recipe();
+		CuT.setAmtCoffee("1");
+		assertEquals(1, CuT.getAmtCoffee());
+	}
+	
+	@Test
+	public void testSetAmtCoffeeNegativeInteger() throws RecipeException{
+		Recipe CuT = new Recipe();
+		try {
+		CuT.setAmtCoffee("-1");
+		}
+		catch (RecipeException ie) {
+			;
+		}
+		assertEquals(0, CuT.getAmtCoffee());
+	}
+	
+	@Test
+	public void testSetAmtCoffeeRandomString() throws RecipeException{
+		Recipe CuT = new Recipe();
+		try {
+		CuT.setAmtCoffee("fdasjkl;");
+		}
+		catch (RecipeException ie) {
+			;
+		}
+		assertEquals(0, CuT.getAmtCoffee());
+	}
+	
+	@Test
+	public void testGetAmtMilk() {
+		Recipe CuT = new Recipe();
+		int amtMilk = CuT.getAmtMilk();
+		assertEquals(0, amtMilk);
+	}
+	
+	@Test
+	public void testSetAmtMilkPositiveInteger() throws RecipeException{
+		Recipe CuT = new Recipe();
+		CuT.setAmtMilk("1");
+		assertEquals(1, CuT.getAmtMilk());
+	}
+	
+	@Test
+	public void testSetAmtMilkNegativeInteger() throws RecipeException{
+		Recipe CuT = new Recipe();
+		try {
+		CuT.setAmtMilk("-1");
+		}
+		catch (RecipeException ie) {
+			;
+		}
+		assertEquals(0, CuT.getAmtMilk());
+	}
+	
+	@Test
+	public void testSetAmtMilkRandomString() throws RecipeException{
+		Recipe CuT = new Recipe();
+		try {
+		CuT.setAmtMilk("fdasjkl;");
+		}
+		catch (RecipeException ie) {
+			;
+		}
+		assertEquals(0, CuT.getAmtMilk());
+	}
+}

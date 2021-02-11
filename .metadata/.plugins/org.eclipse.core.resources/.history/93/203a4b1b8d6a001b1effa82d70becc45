@@ -1,0 +1,4 @@
+module Coffeemaker {
+	exports edu.ncsu.csc326.coffeemaker.exceptions;
+	exports edu.ncsu.csc326.coffeemaker;
+}

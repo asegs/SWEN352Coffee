@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="InventoryTest" project="Coffeemaker" tests="29" started="29" failures="0" errors="0" ignored="0">
+  <testsuite name="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.003">
+    <testcase name="testAddSugarNormal" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddSugarNonNumeric" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSugarOverRecipe" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.001"/>
+    <testcase name="testCoffeeOverRecipe" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddChocolateNormal" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSubtractNotEnoughSugar" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddMilkNormal" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testToString" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddMilkNonNumeric" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSetAndGetMilk" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddCoffeeNormal" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSubtractNotEnoughMilk" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testEvenRecipe" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testChocolateOverRecipe" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.001"/>
+    <testcase name="testAddCoffeeNonNumeric" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSetAndGetSugar" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSubtractNotEnoughCoffee" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testMilkOverRecipe" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddMilkNegative" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddChocolateNegative" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testEmptyRecipe" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddSugarNegative" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSetAndGetChocolate" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSubtractNormal" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddCoffeeNegative" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testHeavyRecipe" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.001"/>
+    <testcase name="testSubtractNotEnoughChocolate" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testAddChocolateNonNumeric" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+    <testcase name="testSetAndGetCoffee" classname="edu.ncsu.csc326.coffeemaker.InventoryTest" time="0.0"/>
+  </testsuite>
+</testrun>

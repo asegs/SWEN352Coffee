@@ -183,6 +183,13 @@ public class RecipeTest extends TestCase {
 	}
 	
 	@Test
+	public void testSetNameBlank() {
+		Recipe CuT = new Recipe();
+		CuT.setName("Initial");
+		CuT.setName("");
+		assertEquals("Initial", CuT.getName());
+	}
+	@Test
 	public void testSetNameNull() {
 		Recipe CuT = new Recipe();
 		CuT.setName(null);

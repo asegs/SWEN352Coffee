@@ -1,0 +1,24 @@
+package edu.ncsu.csc326.coffeemaker;
+
+import org.junit.jupiter.api.Test;
+
+import junit.framework.TestCase;
+
+public class RecipeTest extends TestCase {
+	private Recipe CuT;
+
+	protected void setUp() throws Exception {
+		super.setUp();
+		CuT = new Recipe();
+	}
+
+	protected void tearDown() throws Exception {
+		super.tearDown();
+	}
+	
+	@Test
+	public void getAmtChocolateTest() {
+		int amtChocolate = this.CuT.getAmtChocolate();
+		assertEquals(1,1);
+	}
+}
