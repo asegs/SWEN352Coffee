@@ -165,13 +165,6 @@ public class RecipeTest extends TestCase {
 	}
 	
 	@Test
-	public void testSetAmtSugarZero() throws RecipeException{
-		Recipe CuT = new Recipe();
-		CuT.setAmtSugar("0");
-		assertEquals(0, CuT.getAmtSugar());
-	}
-	
-	@Test
 	public void testSetAmtSugarNegativeInteger() throws RecipeException{
 		Recipe CuT = new Recipe();
 		try {
@@ -240,18 +233,6 @@ public class RecipeTest extends TestCase {
 			;
 		}
 		assertEquals(1, CuT.getPrice());
-	}
-	
-	@Test
-	public void testSetPriceZero() {
-		Recipe CuT = new Recipe();
-		try {
-			CuT.setPrice("0");
-		}
-		catch(RecipeException ie) {
-			;
-		}
-		assertEquals(0, CuT.getPrice());
 	}
 	
 	

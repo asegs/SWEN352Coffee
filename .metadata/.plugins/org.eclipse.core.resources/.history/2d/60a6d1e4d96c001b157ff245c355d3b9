@@ -242,18 +242,6 @@ public class RecipeTest extends TestCase {
 		assertEquals(1, CuT.getPrice());
 	}
 	
-	@Test
-	public void testSetPriceZero() {
-		Recipe CuT = new Recipe();
-		try {
-			CuT.setPrice("0");
-		}
-		catch(RecipeException ie) {
-			;
-		}
-		assertEquals(0, CuT.getPrice());
-	}
-	
 	
 	@Test
 	public void testSetPriceNegativeInteger() {
