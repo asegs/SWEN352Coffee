@@ -170,6 +170,16 @@ public class RecipeBookTest extends TestCase {
 		this.mockRecipeBook.editRecipe(0, replace);
 		assertEquals(replace.getName(), this.mockRecipeBook.getRecipes()[0].getName());
 	}
+	
+	@Test
+	public void testEditRecipeUpdateName() {
+		Recipe replace = new Recipe();
+		replace.setName("Moises");
+		this.mockRecipeBook.addRecipe(replace);
+		replace.setName("Written");
+		this.mockRecipeBook.editRecipe(0, replace);
+		assertEquals("Written",this.mockRecipeBook.getRecipes()[0].getName());
+	}
 
 
 	protected void tearDown() throws Exception {
